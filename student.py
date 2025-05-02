@@ -24,6 +24,7 @@ study = st.number_input("Jam belajar per hari", min_value=0.0, max_value=12.0, v
 exercise = st.number_input("Jam olahraga per minggu", min_value=0.0, max_value=20.0, value=3.0)
 screen_time = st.number_input("Waktu layar per hari (jam)", min_value=0.0, max_value=15.0, value=6.0)
 junk_food = st.selectbox("Frekuensi konsumsi junk food", ["Jarang", "Kadang", "Sering"])
+GPA = st.number_input("GPA", min_value=0.0, max_value=20.0, value=3.0)
 
 # Konversi nilai kategorikal ke numerik
 junk_food_mapping = {"Jarang": 0, "Kadang": 1, "Sering": 2}
@@ -31,7 +32,7 @@ junk_food_val = junk_food_mapping[junk_food]
 
 if st.button("Prediksi Status Kesehatan"):
     # Preprocessing input
-    input_data = np.array([[sleep, study, exercise, screen_time, junk_food_val]])
+    input_data = np.array([[sleep, study, exercise, screen_time, junk_food_val, GPA]])
     input_scaled = scaler.transform(input_data).astype(np.float32)
 
     interpreter.set_tensor(input_details[0]['index'], input_scaled)
