@@ -15,8 +15,8 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 # Judul Aplikasi
-st.title("Crop Recommendation System")
-st.write("Masukkan informasi lingkungan untuk mendapatkan rekomendasi tanaman yang cocok.")
+st.title("Student Lifestyle")
+st.write("masukan data mahasiswa")
 
 # Form input pengguna (disesuaikan dengan dataset student lifestyle)
 sleep = st.number_input("Jam tidur per hari", min_value=0.0, max_value=12.0, value=7.0)
